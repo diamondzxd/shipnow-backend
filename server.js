@@ -12,15 +12,15 @@ app.use(express.json());
 app.use(cors());
 
 // Connect to MongoDB
-mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(process.env.MONGO_URI)
     .then(() => console.log('MongoDB connected'))
     .catch((error) => console.error('MongoDB connection error:', error));
 
 // Import routes
-const addressRoutes = require('./routes/address');
-const productRoutes = require('./routes/product');
-const orderRoutes = require('./routes/order');
-const shipmentRoutes = require('./routes/shipment');
+const addressRoutes = require('./routes/addressRoutes');
+const productRoutes = require('./routes/productRoutes');
+const orderRoutes = require('./routes/orderRoutes');
+const shipmentRoutes = require('./routes/shipmentRoutes');
 
 // Set up routes
 app.use('/api/addresses', addressRoutes);
