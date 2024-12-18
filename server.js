@@ -16,6 +16,7 @@ mongoose.connect(process.env.MONGO_URI)
     .then(() => console.log('MongoDB connected'))
     .catch((error) => console.error('MongoDB connection error:', error));
 
+
 // Import routes
 const addressRoutes = require('./routes/addressRoutes');
 const productRoutes = require('./routes/productRoutes');
@@ -27,6 +28,12 @@ app.use('/api/addresses', addressRoutes);
 app.use('/api/products', productRoutes);
 app.use('/api/orders', orderRoutes);
 app.use('/api/shipments', shipmentRoutes);
+
+app.get('/healthz', (req, res) => {
+    res.status(200).json(
+        {'status' : 'running'}
+    )
+})
 
 // Start server
 const PORT = process.env.PORT || 5000;
