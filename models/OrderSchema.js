@@ -10,4 +10,7 @@ const OrderSchema = new mongoose.Schema({
     datetime: { type: Date, default: Date.now },
     is_pending: { type: Boolean, default: true }
 }, { timestamps: true });
-exports.OrderSchema = OrderSchema;
+
+const Order = mongoose.model('Order', OrderSchema);
+
+exports.Order = Order;

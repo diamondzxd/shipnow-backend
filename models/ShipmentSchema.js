@@ -7,4 +7,7 @@ const ShipmentSchema = new mongoose.Schema({
     courier: { type: String, required: true, maxlength: 40 },
     pdf: { type: String } // Use a string to store file path or URL to the file
 }, { timestamps: true });
-exports.ShipmentSchema = ShipmentSchema;
+
+const Shipment = mongoose.model('Shipment', ShipmentSchema);
+
+exports.Shipment = Shipment;

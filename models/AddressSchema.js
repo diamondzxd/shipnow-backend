@@ -12,4 +12,7 @@ const AddressSchema = new mongoose.Schema({
     email: { type: String, required: true, match: /.+\@.+\..+/ },
     is_saved: { type: Boolean, default: false },
 }, { timestamps: true });
-exports.AddressSchema = AddressSchema;
+
+const Address = mongoose.model('Address', AddressSchema);
+
+exports.Address = Address;

@@ -12,4 +12,7 @@ const ProductSchema = new mongoose.Schema({
     height: { type: Number, required: true },
     is_saved: { type: Boolean, default: false }
 }, { timestamps: true });
-exports.ProductSchema = ProductSchema;
+
+const Product = mongoose.model('Product', ProductSchema);
+
+exports.Product = Product;
