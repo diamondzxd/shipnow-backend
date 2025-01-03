@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const Address = require('../models/AddressSchema');
+const { Address } = require('../models/models');
 
 // Create an Address
 router.post('/', async (req, res) => {

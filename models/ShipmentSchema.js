@@ -6,5 +6,5 @@ const ShipmentSchema = new mongoose.Schema({
     awb: { type: String, required: true, maxlength: 30 },
     courier: { type: String, required: true, maxlength: 40 },
     pdf: { type: String } // Use a string to store file path or URL to the file
-});
+}, { timestamps: true });
 exports.ShipmentSchema = ShipmentSchema;

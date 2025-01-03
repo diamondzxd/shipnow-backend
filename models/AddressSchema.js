@@ -10,6 +10,6 @@ const AddressSchema = new mongoose.Schema({
     pincode: { type: Number, required: true },
     phone: { type: String, required: true, maxlength: 10 },
     email: { type: String, required: true, match: /.+\@.+\..+/ },
-    is_saved: { type: Boolean, default: false }
-});
+    is_saved: { type: Boolean, default: false },
+}, { timestamps: true });
 exports.AddressSchema = AddressSchema;

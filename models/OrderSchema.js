@@ -9,5 +9,5 @@ const OrderSchema = new mongoose.Schema({
     amount: { type: Number, required: true },
     datetime: { type: Date, default: Date.now },
     is_pending: { type: Boolean, default: true }
-});
+}, { timestamps: true });
 exports.OrderSchema = OrderSchema;
